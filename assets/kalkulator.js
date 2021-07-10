@@ -52,7 +52,15 @@ function performCalculator() {
         result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber)
     }
 
+    const history = {
+        firstNumber: calculator.firstNumber,
+        secondNumber: calculator.displayNumber,
+        operator: calculator.operator,
+        result: result
+    };
+    putHistory(history);
     calculator.displayNumber = result;
+    renderHistory();
 }
 
 const buttons = document.querySelectorAll(".button");
@@ -96,3 +104,4 @@ function inputDigit(digit) {
         calculator.displayNumber += digit;
     }
 }
+
